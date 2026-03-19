@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SchoolNewsBot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0edbb448a1bd10ae51eec849abeeaae367f93ab")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+765db57570a3bc711f9391529294084e8a3e0a6e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SchoolNewsBot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SchoolNewsBot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -68,6 +68,7 @@ public class NewsParserWorker : BackgroundService
         {
             _logger.LogInformation($"Найдена новая новость: {title}");
             _lastNewsUrl = link;
+            File.WriteAllText("OldUrl.txt", link); // Запись в файл
 
             string message = $"📢 <b>Новая публикация на сайте лицея!</b>\n\n{title}\n\n<a href='{link}'>Читать полностью...</a>";
 

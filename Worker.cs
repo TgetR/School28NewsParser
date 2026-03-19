@@ -17,6 +17,12 @@ public class NewsParserWorker : BackgroundService
         //Токен из переменной окружения, задается в docker-compose
         string? token = Environment.GetEnvironmentVariable("TELEGRAM_BOT_TOKEN");
         
+        if (File.Exists("OldUrl.txt"))
+        {
+            _lastNewsUrl = File.ReadAllText("OldUrl.txt");
+            _logger.LogInformation($"Загружена последняя ссылка из кэша: {_lastNewsUrl}");
+        }
+        
         if (string.IsNullOrEmpty(token))
         {
             throw new Exception("Не задан токен телеграм-бота в переменных окружения!");

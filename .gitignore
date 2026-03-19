@@ -1,0 +1,32 @@
+# .NET / Visual Studio
+bin/
+obj/
+out/
+.vs/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.cache
+*.log
+*.pdb
+*.dll
+*.exe
+
+# Rider / IntelliJ
+.idea/
+*.sln.iml
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider / VS Code settings
+.vscode/
+*.code-workspace
+
+# Ignore text files
+*.txt

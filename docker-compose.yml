@@ -1,10 +1,10 @@
 services:
   school-news-bot:
-    build: .  # Используем Dockerfile, который уже есть в корне
+    build: .
     container_name: school_news_bot
     restart: unless-stopped
     environment:
-      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN} # Берем из секретов сервера/GitHub
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN} 
       - TZ=Europe/Moscow
     volumes:
-      - ./OldUrl.txt:/app/OldUrl.txt
+      - ./data:/app/data

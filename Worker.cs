@@ -6,7 +6,8 @@ public class NewsParserWorker : BackgroundService
 {
     private readonly ILogger<NewsParserWorker> _logger;
     private readonly ITelegramBotClient _botClient;
-    private string _lastNewsUrl = string.Empty; // Cсылка на последнюю новость
+    private string _lastNewsUrlFile = "data/OldUrl.txt";
+    private string _lastNewsUrl = string.Empty;
     
     // TODO: SQL или другой способ хранения подписчиков. Пока просто список в коде для теста.
     private readonly List<long> _subscribedUsers = new() { 1790324436 }; 
@@ -17,9 +18,9 @@ public class NewsParserWorker : BackgroundService
         //Токен из переменной окружения, задается в docker-compose
         string? token = Environment.GetEnvironmentVariable("TELEGRAM_BOT_TOKEN");
         
-        if (File.Exists("OldUrl.txt"))
+        if (File.Exists(_lastNewsUrlFile))
         {
-            _lastNewsUrl = File.ReadAllText("OldUrl.txt");
+            _lastNewsUrl = File.ReadAllText(_lastNewsUrlFile);
             _logger.LogInformation($"Загружена последняя ссылка из кэша: {_lastNewsUrl}");
         }
         
